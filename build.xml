@@ -1,0 +1,123 @@
+<project name="DataLoad" default="runtest" basedir=".">
+   <property name="src.dir" value="${basedir}/src"/>
+   <property name="build.dir" value="${basedir}/bin"/>
+   <property name="report.dir" value="${basedir}/test-output"/>
+   <property name="lib.dir" value="${basedir}/lib"/>
+     <property name="report.dir.rerun" value="${basedir}/test-output-failed"/>
+   
+  <taskdef name="testng"
+      classname="com.beust.testng.TestNGAntTask"
+      classpathref="libraries"/>
+  
+  <path id="libraries">
+		<fileset dir="${lib.dir}">
+			<include name="*.jar"/>
+		</fileset>
+  </path>
+  
+  <path id="run">
+		<path refid="libraries"/>
+		<pathelement location="${build.dir}"/>
+			<pathelement location="${java.home}/../lib/tools.jar"/>
+			<pathelement location="${src.dir}"/>
+			<pathelement location="${basedir}"/>
+  		
+  </path>
+
+  <target name="env:info">
+		<echo>
+			BASEDIR        =${basedir}
+			BUILDDIR       =${build.dir}
+			SRC.DIR        =${src.dir}
+			REPORT.DIR     =${report.dir}
+			JAVA VERSION   =${java.home}
+			Library		   =${lib.dir}
+		</echo>
+  </target>
+    
+  <target name="prepare" depends="clean">
+		<tstamp/>
+		<mkdir dir="${report.dir}"/>
+		<mkdir dir="${build.dir}"/>
+		<mkdir dir="${report.dir.rerun}"/>
+  </target>
+
+ 
+
+	<!-- ==================================================================== -->
+	<!-- Compile                                                              -->
+	<!-- ==================================================================== -->
+  <target name="compile" depends="prepare">
+			  <javac debug="true"
+           classpathref="libraries"
+           srcdir="${src.dir}"
+           destdir="${build.dir}"
+		  />
+  </target>
+
+
+
+<!-- ====================================================================== -->
+  <!-- Regression Testing  Start                                              -->
+  <!-- ==================================================================== -->
+
+
+
+
+
+  <!-- ==================================================================== -->
+  <!-- Run                                                             -->
+  <!-- ==================================================================== -->
+  
+	 <target name="runtest" description="Run tests" depends="compile">
+	
+		<testng classpathref="run" haltonfailure="true" outputdir="${report.dir}">
+		<xmlfileset dir="${basedir}" includes="testng.xml" />
+		<jvmarg value="-ea" />
+		</testng>
+	
+	</target>	
+
+
+	
+	<target name="run"  description="Run test case" depends="runtest"/>
+	
+	<target name="clean">
+        <delete dir="${basedir}/test-output"/>
+	    <delete dir="${basedir}/bin"/>
+     </target>
+
+	 <target name="runsanitytest" description="Run tests" depends="compile">
+	
+		<testng classpathref="run" haltonfailure="true" outputdir="${report.dir}">
+		<xmlfileset dir="${basedir}" includes="sanitytestng.xml" />
+		<jvmarg value="-ea" />
+		</testng>
+	
+	</target>
+	
+	<target name="runsanity"  description="Run test case" depends="runsanitytest"/>
+	
+	<target name="clean1">
+       <delete dir="${basedir}/test-output"/>
+	    <delete dir="${basedir}/bin"/>
+    </target>
+	
+	 <target name="runwflwmngmnttest" description="Run tests" depends="compile">
+		
+			<testng classpathref="run" haltonfailure="true" outputdir="${report.dir}">
+			<xmlfileset dir="${basedir}" includes="wfmngttestng.xml" />
+			<jvmarg value="-ea" />
+			</testng>
+		
+		</target>
+		
+		<target name="runwflw"  description="Run test case" depends="runwflwmngmnttest"/>
+		
+		<target name="clean2">
+	       <delete dir="${basedir}/test-output"/>
+		    <delete dir="${basedir}/bin"/>
+	    </target>
+
+
+  </project>

@@ -1,0 +1,250 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<testng-results>
+
+	<suite name="BMSUS Sanity Functionalities">
+	 
+				<test name="User Login" parallel="false">
+					<classes>
+						<class name="com.bmsus.sanity.Login">
+							<methods>
+								<include
+									name="com.bmsus.sanity.Login.testLogin()" />
+							</methods>
+						</class>
+					</classes>
+				</test>
+				<!--
+				<test name="KOL Details" parallel="false">
+					<classes>
+						<class name="com.bmsus.sanity.KOLDetails">
+							<methods>
+								<include
+									name="com.bmsus.sanity.KOLDetails.testKOLDetails()" />
+							</methods>
+						</class>
+					</classes>
+				</test>
+				
+				<test name="Biography" parallel="false">
+					<classes>
+						<class name="com.bmsus.sanity.Biography">
+							<methods>
+								<include
+									name="com.bmsus.sanity.Biography.testBiography()" />
+							</methods>
+						</class>
+					</classes>
+				</test>
+				
+				<test name="Identifiers" parallel="false">
+					<classes>
+						<class name="com.bmsus.sanity.Identifiers">
+							<methods>
+								<include
+									name="com.bmsus.sanity.Identifiers.testIdentifiers()" />
+							</methods>
+						</class>
+					</classes>
+				</test>
+				
+				<test name="Education" parallel="false">
+					<classes>
+						<class name="com.bmsus.sanity.Education">
+							<methods>
+								<include
+									name="com.bmsus.sanity.Education.testEducation()" />
+							</methods>
+						</class>
+					</classes>
+				</test>
+				
+				<test name="CareerHistory" parallel="false">
+					<classes>
+						<class name="com.bmsus.sanity.CareerHistory">
+							<methods>
+								<include
+									name="com.bmsus.sanity.CareerHistory.testCareerHistory()" />
+							</methods>
+						</class>
+					</classes>
+				</test>
+				
+				<test name="Address" parallel="false">
+					<classes>
+						<class name="com.bmsus.sanity.Address">
+							<methods>
+								<include
+									name="com.bmsus.sanity.Address.testAddress" />
+							</methods>
+						</class>
+					</classes>
+				</test>
+				
+				<test name="Contact Information" parallel="false">
+					<classes>
+						<class name="com.bmsus.sanity.ContactInformation">
+							<methods>
+								<include
+									name="com.bmsus.sanity.ContactInformation.testContactInformation" />
+							</methods>
+						</class>
+					</classes>
+				</test>
+				
+				<test name="Additional Contacts" parallel="false">
+					<classes>
+						<class name="com.bmsus.sanity.AdditionalContacts">
+							<methods>
+								<include
+									name="com.bmsus.sanity.AdditionalContacts.testAdditionalContacts" />
+							</methods>
+						</class>
+					</classes>
+				</test>
+				
+				<test name="Societies" parallel="false">
+					<classes>
+						<class name="com.bmsus.sanity.Societies">
+							<methods>
+								<include
+									name="com.bmsus.sanity.Societies.testSocieties" />
+							</methods>
+						</class>
+					</classes>
+				</test>
+				
+				<test name="IndustryActivities" parallel="false">
+					<classes>
+						<class name="com.bmsus.sanity.IndustryActivities">
+							<methods>
+								<include
+									name="com.bmsus.sanity.IndustryActivities.testIndustryActivities" />
+							</methods>
+						</class>
+					</classes>
+				</test>
+				
+				<test name="Presentations" parallel="false">
+					<classes>
+						<class name="com.bmsus.sanity.Presentations">
+							<methods>
+								<include
+									name="com.bmsus.sanity.Presentations.testPresentations" />
+							</methods>
+						</class>
+					</classes>
+				</test>
+				
+				<test name="Committees" parallel="false">
+					<classes>
+						<class name="com.bmsus.sanity.Committees">
+							<methods>
+								<include
+									name="com.bmsus.sanity.Committees.testCommittees" />
+							</methods>
+						</class>
+					</classes>
+				</test>
+				
+				<test name="EditorialBoards" parallel="false">
+					<classes>
+						<class name="com.bmsus.sanity.EditorialBoards">
+							<methods>
+								<include
+									name="com.bmsus.sanity.EditorialBoards.testEditorialBoards" />
+							</methods>
+						</class>
+					</classes>
+				</test>
+				
+				<test name="Grants" parallel="false">
+					<classes>
+						<class name="com.bmsus.sanity.Grants">
+							<methods>
+								<include
+									name="com.bmsus.sanity.Grants.testGrants" />
+							</methods>
+						</class>
+					</classes>
+				</test>
+				
+				<test name="Patents" parallel="false">
+					<classes>
+						<class name="com.bmsus.sanity.Patents">
+							<methods>
+								<include
+									name="com.bmsus.sanity.Patents.testPatents" />
+							</methods>
+						</class>
+					</classes>
+				</test>
+				
+				<test name="Honors" parallel="false">
+					<classes>
+						<class name="com.bmsus.sanity.Honors">
+							<methods>
+								<include
+									name="com.bmsus.sanity.Honors.testHonors" />
+							</methods>
+						</class>
+					</classes>
+				</test>
+				
+				<test name="Abstract" parallel="false">
+					<classes>
+						<class name="com.bmsus.sanity.Abstract">
+							<methods>
+								<include
+									name="com.bmsus.sanity.Abstract.testAbstract" />
+							</methods>
+						</class>
+					</classes>
+				</test>
+				
+				<test name="Publications" parallel="false">
+					<classes>
+						<class name="com.bmsus.sanity.Publications">
+							<methods>
+								<include
+									name="com.bmsus.sanity.Publications.testPublications" />
+							</methods>
+						</class>
+					</classes>
+				</test>
+		
+				<test name="TopicExpertise" parallel="false">
+					<classes>
+						<class name="com.bmsus.sanity.TopicExpertise">
+							<methods>
+								<include
+									name="com.bmsus.sanity.TopicExpertise.testTopicExpertise" />
+							</methods>
+						</class>
+					</classes>
+				</test>
+				
+				<test name="InterestDescription" parallel="false">
+					<classes>
+						<class name="com.bmsus.sanity.InterestDescription">
+							<methods>
+								<include
+									name="com.bmsus.sanity.InterestDescription.testInterestDescription" />
+							</methods>
+						</class>
+					</classes>
+				</test>
+				
+				<test name="Trails" parallel="false">
+					<classes>
+						<class name="com.bmsus.sanity.Trails">
+							<methods>
+								<include
+									name="com.bmsus.sanity.Trails.testTrails" />
+							</methods>
+						</class>
+					</classes>
+				</test>
+	-->	
+	</suite>
+
+</testng-results>
